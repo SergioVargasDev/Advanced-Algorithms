@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//*sopapa
+
 
 void merge(vector<double> &list, int left, int mid, int right){
     //crear lista de lado izquierdo
