@@ -4,18 +4,18 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-//*sopa
-template<class T>
-void merge(vector<T> &list, int left, int mid, int right){
+
+
+void merge(vector<double> &list, int left, int mid, int right){
     //crear lista de lado izquierdo
-    vector<T> leftList;
+    vector<double> leftList;
     for (int i = left; i <= mid; i++){
         //insertar elementos en la lista izquierda
         leftList.push_back(list[i]);
     }
 
     //crear lsta derecho
-    vector<T> rightList;
+    vector<double> rightList;
     for (int j = mid+1; j <= right; j++){
         rightList.push_back(list[j]);
     }
@@ -29,7 +29,7 @@ void merge(vector<T> &list, int left, int mid, int right){
     //iteramos mientras haya elementos por comparar en ambas listsa
     while ((leftIndex < leftList.size()) && (rightIndex < rightList.size())){
         //comparamos el valor en indice izquierdo 
-        if (leftList[leftIndex] < rightList[rightIndex]){
+        if (leftList[leftIndex] > rightList[rightIndex]){
             list[auxIndex] = leftList[leftIndex];
 
             //incrementar indice izquierdo
@@ -55,8 +55,8 @@ void merge(vector<T> &list, int left, int mid, int right){
     }
 }
 
-template<class T>
-void mergeSort(vector<T> &list, int left, int right){
+
+void mergeSort(vector<double> &list, int left, int right){
     //caso base, condicion de control cuando la lista tenga un solo elemento
     if (left < right){
         int mid = left+(right-left)/2;
@@ -72,7 +72,26 @@ void mergeSort(vector<T> &list, int left, int right){
 
 int main()
 {
+    cout << "Ingrese el número de valores a ordenar: " ;
+    int n;
+    cin >> n;
+    vector<double> lista(n);
+    cout << "Ingrese " << n << " valores (reales o enteros), uno por línea:" << endl;
 
+    for (int i = 0; i < n; i++){
+        cin >> lista[i];
+    }
+    cout << endl;
+
+    mergeSort(lista,0,n-1);
+
+    cout << "Resultado: " << endl;
+    cout << "Valores ordenados de mayor a menor: " << endl;
+    for (int i = 0; i < n; i++){
+        cout << lista[i] << " ";
+    }
+
+    cout << endl;
     
-
+    return 0;
 }
