@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+//sopa
 
 void merge(vector<double> &list, int left, int mid, int right){
     //crear lista de lado izquierdo
