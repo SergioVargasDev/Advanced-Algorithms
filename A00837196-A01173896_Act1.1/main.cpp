@@ -95,3 +95,7 @@ int main()
     
     return 0;
 }
+
+//* Comandos para correr el código
+//* g++ main.cpp -o a.out
+//* ./a.out < in.txt
